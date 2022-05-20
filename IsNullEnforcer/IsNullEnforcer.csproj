@@ -6,6 +6,9 @@
         <Nullable>enable</Nullable>
         <Version>0.0.1</Version>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>Collin Alpert</Authors>
+        <Title>Roslyn Analyzer which enforces the usage of 'is null' and 'is not null' oder '== null' and '!= null'.</Title>
+        <Description>Roslyn Analyzer which enforces the usage of 'is null' and 'is not null' oder '== null' and '!= null'.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/CollinAlpert/IsNullEnforcer</PackageProjectUrl>
         <PackageTags>dotnet roslyn-analyzer</PackageTags>
