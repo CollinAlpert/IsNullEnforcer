@@ -16,7 +16,7 @@ public class NullComparisonAnalyzer : DiagnosticAnalyzer
 		context.RegisterCompilationStartAction(OnCompilationStartAction);
 	}
 
-	private void OnCompilationStartAction(CompilationStartAnalysisContext obj)
+	private static void OnCompilationStartAction(CompilationStartAnalysisContext obj)
 	{
 		obj.RegisterSyntaxNodeAction(OnSyntaxNodeAction, SyntaxKind.EqualsExpression, SyntaxKind.NotEqualsExpression);
 	}

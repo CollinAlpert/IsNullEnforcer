@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis.Testing.Verifiers;
 using Xunit;
 
 namespace IsNullEnforcerTests;
+
 using Verify = CodeFixVerifier<NullComparisonAnalyzer, NullComparisonFixer, CSharpCodeFixTest<NullComparisonAnalyzer, NullComparisonFixer, XUnitVerifier>, XUnitVerifier>;
 
 public class IsNotNullTests
@@ -18,13 +19,19 @@ public class Test {{
 }}
 ";
 
-	public const string WillRaise = "if ({|#0:s != null|}) return;";
-	public const string WillRaiseFixed = "if (s is not null) return;";
+	private const string NotEqualCheck = "if ({|#0:s != null|}) return;";
+	private const string NotEqualCheckFixed = "if (s is not null) return;";
 	
-	public const string WillNotRaise = "if (s is not null) return;";
+	private const string MultipleConditions = "if ({|#0:s != null|} && s.Length > 0) return;";
+	private const string MultipleConditionsFixed = "if (s is not null && s.Length > 0) return;";
+	
+	private const string WillNotRaise = "if (s is not null) return;";
+	private const string WillNotRaise2 = "if (s is not null && s.Length > 0) return;";
+	private const string WillNotRaise3 = "if (s is not \"\" && s.Length > 0) return;";
 	
 	[Theory]
-	[InlineData(WillRaise, WillRaiseFixed)]
+	[InlineData(NotEqualCheck, NotEqualCheckFixed)]
+	[InlineData(MultipleConditions, MultipleConditionsFixed)]
 	public Task WillRaiseDiagnostic(string code, string fixedCode)
 	{
 		code = string.Format(Template, code);
@@ -39,6 +46,8 @@ public class Test {{
 
 	[Theory]
 	[InlineData(WillNotRaise)]
+	[InlineData(WillNotRaise2)]
+	[InlineData(WillNotRaise3)]
 	public Task WillNotRaiseDiagnostic(string code)
 	{
 		code = string.Format(Template, code);
