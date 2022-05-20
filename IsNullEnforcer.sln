@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsNullEnforcer", "IsNullEnforcer\IsNullEnforcer.csproj", "{19F8E8CD-0992-4961-8120-90B186AA0B51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsNullEnforcerTests", "IsNullEnforcerTests\IsNullEnforcerTests.csproj", "{EF326697-C0D6-4BE4-991C-D20710D060D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19F8E8CD-0992-4961-8120-90B186AA0B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F8E8CD-0992-4961-8120-90B186AA0B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F8E8CD-0992-4961-8120-90B186AA0B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F8E8CD-0992-4961-8120-90B186AA0B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF326697-C0D6-4BE4-991C-D20710D060D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF326697-C0D6-4BE4-991C-D20710D060D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF326697-C0D6-4BE4-991C-D20710D060D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF326697-C0D6-4BE4-991C-D20710D060D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
